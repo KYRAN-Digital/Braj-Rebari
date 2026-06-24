@@ -23,10 +23,10 @@
   --border: rgba(11, 36, 93, 0.1);
   --border-gold: rgba(226, 176, 7, 0.25);
   
-  --radius-xl: 28px;
-  --radius-lg: 20px;
-  --radius-md: 14px;
-  --radius-sm: 8px;
+  --radius-xl: 16px; /* Decreased from 28px for a sleeker look */
+  --radius-lg: 12px; /* Decreased from 20px */
+  --radius-md: 8px;  /* Decreased from 14px */
+  --radius-sm: 4px;  /* Decreased from 8px */
   
   --shadow-premium: 0 20px 40px rgba(7, 25, 68, 0.08);
   --shadow-gold: 0 8px 24px rgba(226, 176, 7, 0.12);
@@ -135,33 +135,51 @@ body {
   z-index: 1;
 }
 
-/* --- HEADER & FLOATING LOGO (Yash Tiwari Style) --- */
-.logo-container {
+/* --- HOUSE SILHOUETTE HEADER OVERLAY --- */
+.header-design-overlay {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  background: var(--white);
-  border-radius: 0 0 20px 20px;
-  padding: 4px 18px; /* Compact padding for upscaled logo */
-  box-shadow: 0 10px 30px rgba(8, 27, 72, 0.08);
-  border: 1px solid rgba(11, 36, 93, 0.06);
-  border-top: none;
-  max-width: 200px;
+  left: 0;
+  width: 100%;
+  height: 52%; /* Covers top 52% of the profile card height */
+  z-index: 10;
+  pointer-events: none; /* Let clicks pass through to the image */
+}
+
+.header-design-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.header-design-svg polygon {
+  fill: var(--white);
+}
+
+.header-design-svg path {
+  stroke: var(--gold);
+  stroke-width: 0.85px; /* Scales with SVG viewBox to prevent alignment gaps */
+}
+
+.overlay-logo-container {
+  position: absolute;
+  top: 6%;
+  left: 4%;
+  width: 41%;
+  height: 34%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  pointer-events: auto; /* Allow interaction if needed */
 }
 
-.logo-container:hover {
-  transform: translateX(-50%) translateY(2px);
-}
-
-.brand-logo {
-  max-height: 72px; /* Increased from 60px to make it even larger */
-  width: auto;
+.overlay-brand-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -175,12 +193,11 @@ body {
 /* Full image profile card (Not circular cropped) */
 .profile-card {
   background: var(--white);
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl); /* Rounded bottom corners only for full-bleed top */
+  border-radius: var(--radius-xl); /* Rounded all four corners */
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(7, 25, 68, 0.05);
   border: 1px solid rgba(11, 36, 93, 0.05);
-  border-top: none;
-  margin-top: 0;
+  margin: 16px 20px 0; /* Floated card with margin matching container padding */
   position: relative;
   z-index: 5;
 }
@@ -197,7 +214,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%; /* Prioritize upper body/face */
+  object-position: 58% 20%; /* Shifted slightly right to align face with house window */
   display: block;
   transform: scale(1.15);
   transform-origin: center 20%;
@@ -262,15 +279,7 @@ body {
   height: 13px;
 }
 
-/* --- BENTO ACTIONS POSITIONING & ALIGNMENT --- */
-.bento-call .bento-action-arrow,
-.bento-whatsapp .bento-action-arrow,
-.bento-insta-personal .bento-action-arrow,
-.bento-insta-business .bento-action-arrow {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-}
+
 
 /* --- BENTO QUICK LINKS GRID --- */
 .links-bento-grid {
@@ -282,6 +291,8 @@ body {
 
 .bento-card {
   display: flex;
+  align-items: center;
+  gap: 12px;
   background: var(--white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
@@ -290,22 +301,12 @@ body {
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  padding: 16px;
+  padding: 12px 14px;
 }
 
 .bento-email {
   grid-column: span 2;
-  align-items: center;
   gap: 16px;
-}
-
-.bento-call,
-.bento-whatsapp,
-.bento-insta-personal,
-.bento-insta-business {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
 }
 
 /* Bento Call (Navy theme) override hover states */
@@ -317,11 +318,6 @@ body {
 .bento-call:hover .bento-icon-wrap {
   background: var(--navy);
   color: var(--white);
-}
-
-.bento-call:hover .bento-action-arrow {
-  border-color: rgba(11, 36, 93, 0.3);
-  color: var(--navy);
 }
 
 .bento-card:hover {
@@ -400,28 +396,7 @@ body {
   word-break: break-all;
 }
 
-.bento-action-arrow {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  transition: all 0.25s ease;
-}
 
-.bento-card:hover .bento-action-arrow {
-  border-color: var(--gold);
-  color: var(--gold-dark);
-  transform: translateX(3px);
-}
-
-.bento-action-arrow svg {
-  width: 14px;
-  height: 14px;
-}
 
 /* --- SECTION GENERAL STYLES --- */
 .section {

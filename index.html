@@ -38,9 +38,19 @@
         
         <!-- Full-Bleed Profile Card (Yash Tiwari Style Header Layout) -->
         <div class="profile-card fade-in-up">
-          <!-- Absolute Floating Logo Card -->
-          <div class="logo-container">
-            <img src="images/logo.png" alt="S. S. Enterprises Logo" class="brand-logo" fetchpriority="high" />
+          <!-- Custom House Silhouette Header Overlay -->
+          <div class="header-design-overlay">
+            <svg class="header-design-svg" viewBox="0 0 100 60" preserveAspectRatio="none">
+              <!-- White Mask Polygon -->
+              <polygon points="0,0 100,0 100,38 84,32 84,22 80,17 80,5 76,5 76,12 72,7 48,22 48,32 0,44" />
+              <!-- Gold Accent Line -->
+              <path d="M 0,44 L 48,32 L 48,22 L 72,7 L 76,12 L 76,5 L 80,5 L 80,17 L 84,22 L 84,32 L 100,38" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            
+            <!-- Logo Container inside the White Area -->
+            <div class="overlay-logo-container">
+              <img src="images/logo.png" alt="S. S. Enterprises Logo" class="overlay-brand-logo" fetchpriority="high" />
+            </div>
           </div>
           
           <div class="profile-img-wrap">
@@ -79,13 +89,8 @@
                 </svg>
               </div>
               <div class="bento-content">
-                <span class="bento-label">Voice Call</span>
+                <span class="bento-label">Contact</span>
                 <span class="bento-value">Call Now</span>
-              </div>
-              <div class="bento-action-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
               </div>
             </a>
 
@@ -100,11 +105,6 @@
                 <span class="bento-label">WhatsApp</span>
                 <span class="bento-value">Chat Now</span>
               </div>
-              <div class="bento-action-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
-              </div>
             </a>
 
             <!-- Email (Full Width) -->
@@ -116,13 +116,8 @@
                 </svg>
               </div>
               <div class="bento-content">
-                <span class="bento-label">Email Address</span>
+                <span class="bento-label">Email</span>
                 <span class="bento-value">brajrebari1993@icloud.com</span>
-              </div>
-              <div class="bento-action-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
               </div>
             </a>
  
@@ -136,13 +131,8 @@
                 </svg>
               </div>
               <div class="bento-content">
-                <span class="bento-label">Personal Instagram</span>
+                <span class="bento-label">Follow</span>
                 <span class="bento-value">@rabari_braj</span>
-              </div>
-              <div class="bento-action-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
               </div>
             </a>
  
@@ -156,13 +146,8 @@
                 </svg>
               </div>
               <div class="bento-content">
-                <span class="bento-label">S.S. Property IG</span>
+                <span class="bento-label">Follow SS Properties</span>
                 <span class="bento-value">@s.s._property</span>
-              </div>
-              <div class="bento-action-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
               </div>
             </a>
           </div>
@@ -210,7 +195,7 @@
                 </svg>
               </div>
               <h3 class="service-card-title">Plots & Land</h3>
-              <p class="service-card-desc">Residential plots, agricultural lands, and high-yield commercial property locations.</p>
+              <p class="service-card-desc">Residential plots, agricultural lands, and commercial properties.</p>
             </div>
 
             <div class="service-card">
@@ -222,7 +207,7 @@
                 </svg>
               </div>
               <h3 class="service-card-title">Houses & Bungalows</h3>
-              <p class="service-card-desc">Luxury bungalows, modern elevation villas, and standard family home offerings.</p>
+              <p class="service-card-desc">Luxury bungalows, modern elevation villas, and standard family homes.</p>
             </div>
 
             <div class="service-card">
@@ -236,7 +221,7 @@
                 </svg>
               </div>
               <h3 class="service-card-title">Property Investment</h3>
-              <p class="service-card-desc">Strategic location advice for high capital appreciation and long-term security.</p>
+              <p class="service-card-desc">Strategic location advice for high appreciation and long-term security.</p>
             </div>
 
             <div class="service-card">
@@ -250,7 +235,7 @@
                 </svg>
               </div>
               <h3 class="service-card-title">Real Estate Support</h3>
-              <p class="service-card-desc">End-to-end guidance, documentation support, and budget evaluation for property buyers.</p>
+              <p class="service-card-desc">Documentation support and budget guidance for property buyers.</p>
             </div>
           </div>
         </div>
@@ -261,7 +246,7 @@
         <div class="container">
           <div class="section-header">
             <span class="section-eyebrow">PREMIUM SHOWCASE</span>
-            <h2 class="section-title">Luxury Bungalow Opportunity</h2>
+            <h2 class="section-title">S V Homes</h2>
             <div class="title-underline"></div>
           </div>
 
@@ -272,9 +257,9 @@
             </div>
             
             <div class="showcase-details">
-              <h3 class="showcase-heading">Independent Modern Bungalow</h3>
+              <h3 class="showcase-heading">S V Homes</h3>
               <p class="showcase-text">
-                An outstanding residential option showcasing modern architectural elevation and strong styling accents. Specially designed for families looking for ready-to-move-in prestige, maximum ventilation, and excellent property valuation.
+                A modern independent bungalow featuring premium elevation and styling. Ideal for families seeking a ready-to-move-in home in a prime location.
               </p>
               
               <div class="showcase-chips">
