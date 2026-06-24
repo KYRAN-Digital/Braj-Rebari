@@ -473,7 +473,7 @@ body {
 
 .service-card {
   background: var(--white);
-  padding: 20px 16px;
+  padding: 12px 14px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-premium);
@@ -481,14 +481,14 @@ body {
 }
 
 .service-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: var(--gold-soft);
   box-shadow: var(--shadow-gold);
 }
 
 .service-icon-wrap {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-md);
   background: rgba(226, 176, 7, 0.08);
   border: 1.5px solid rgba(226, 176, 7, 0.15);
@@ -496,25 +496,25 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--gold-dark);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .service-icon-wrap svg {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
 }
 
 .service-card-title {
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .service-card-desc {
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 /* --- BUNGALOW SHOWCASE --- */
